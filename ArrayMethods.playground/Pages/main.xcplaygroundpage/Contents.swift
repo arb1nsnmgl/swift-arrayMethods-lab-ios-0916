@@ -16,7 +16,10 @@
  */
 // write your code here
 
-
+var daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+for day in daysOfTheWeek {
+    print("- \(day)")
+}
 
 
 
@@ -27,7 +30,10 @@
  */
 // write your code here
 
-
+let numDaysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+for (index, numDay) in numDaysOfTheWeek.enumerate() {
+    print("\(index + 1). \(numDay)")
+}
 
 
 
@@ -39,9 +45,13 @@
 // write your code here
 
 
+var emptyArray = [String]()
 
-
-
+if emptyArray.isEmpty {
+    print("array is empty")
+} else {
+    print("not empty")
+}
 
 
 
@@ -50,8 +60,13 @@
  */
 // write your code here
 
+var reverseEmptyArray = [String]()
 
-
+if !reverseEmptyArray.isEmpty {
+    print("not empty!")
+} else {
+    print("it's empty.")
+}
 
 
 
@@ -61,11 +76,7 @@
 /*: question5
  ### 5. Find out the size of the 'daysOfTheWeek' array created earlier, and print it to the screen.
  */
-// write your code here
-
-
-
-
+print(daysOfTheWeek.count)
 
 
 
@@ -73,32 +84,29 @@
 /*: question6
  ### 6. Add the two days of the weekend to the 'daysOfTheWeek array and create an enumerated loop to print the values.
  */
-// write your code here
+daysOfTheWeek.append("Saturday")
+daysOfTheWeek.append("Sunday")
 
-
-
-
+for (index,day) in daysOfTheWeek.enumerate() {
+    print("\(index + 1). \(day)")
+}
 
 
 
 /*: question7
  ### 7. Some people start the week on a Sunday. Remove Sunday from the end of the 'daysOfTheWeek' array and then re-add it to the beginning of the array.
  */
-// write your code here
-
-
-
-
-
+daysOfTheWeek.removeAtIndex(6)
+daysOfTheWeek.insert("Sunday", atIndex: 0)
 
 
 
 /*: question8
  ### 8. Loop through the 'daysofTheWeek' array and change each value to lower case.
  */
-// write your code here
-
-
+for day in daysOfTheWeek {
+    print(day.lowercaseString)
+}
 
 
 
@@ -108,10 +116,11 @@
 /*: question9
  ### 9. Check to see if the size of the array is greater than 5, i.e. contains the days of the weekend. If so, remove the days of the weekend from the array.
  */
-// write your code here
-
-
-
+if daysOfTheWeek.count > 5 {
+    daysOfTheWeek.removeFirst()
+    daysOfTheWeek.removeLast()
+}
+daysOfTheWeek
 
 
 
